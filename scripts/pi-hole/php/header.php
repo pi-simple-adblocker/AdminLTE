@@ -12,7 +12,7 @@
     require "scripts/pi-hole/php/theme.php";
     $scriptname = basename($_SERVER['SCRIPT_FILENAME']);
     $hostname = gethostname() ? gethostname() : "";
-
+    $auth=true;
     check_cors();
     
     // Create cache busting version
@@ -418,7 +418,7 @@ if($auth) {
                 </li>
                 <?php if($auth){ ?>
                 <!-- Query Log -->
-                <li<?php if($scriptname === "queries.php"){ ?> class="active"<?php } ?>>
+                 <!--<li<?php if($scriptname === "queries.php"){ ?> class="active"<?php } ?>>
                     <a href="queries.php">
                         <i class="fa fa-fw fa-file-alt"></i> <span>Query Log</span>
                     </a>
@@ -447,7 +447,7 @@ if($auth) {
                         </a>
                     </li>
                   </ul>
-                </li>
+                </li>-->
                 <!-- Whitelist -->
                 <li<?php if($scriptname === "whitelist"){ ?> class="active"<?php } ?>>
                     <a href="groups-domains.php?type=white">
@@ -492,7 +492,7 @@ if($auth) {
                   </ul>
                 </li>
                 <!-- Toggle -->
-                <li id="pihole-disable" class="treeview"<?php if ($pistatus == "0") { ?> hidden<?php } ?>>
+                <!--<li id="pihole-disable" class="treeview"<?php if ($pistatus == "0") { ?> hidden<?php } ?>>
                   <a href="#">
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -526,7 +526,6 @@ if($auth) {
                       </a>
                     </li>
                   </ul>
-                    <!-- <a href="#" id="flip-status"><i class="fa fa-stop"></i> <span>Disable</span></a> -->
                 </li>
                 <li id="pihole-enable" class="treeview"<?php if ($pistatus == "1") { ?> hidden<?php } ?>>
                     <a href="#">
@@ -535,9 +534,9 @@ if($auth) {
                         <span id="flip-status-enable"></span>
                       </span>
                     </a>
-                </li>
+                </li>-->
                 <!-- Tools -->
-                <li class="treeview<?php if (in_array($scriptname, array("messages.php", "gravity.php", "queryads.php", "auditlog.php", "taillog.php", "taillog-FTL.php", "debug.php", "network.php"))){ ?> active<?php } ?>">
+                <!--<li class="treeview<?php if (in_array($scriptname, array("messages.php", "gravity.php", "queryads.php", "auditlog.php", "taillog.php", "taillog-FTL.php", "debug.php", "network.php"))){ ?> active<?php } ?>">
                   <a href="#">
                     <i class="fa fa-fw fa-folder"></i> <span>Tools</span>
                     <span class="pull-right-container">
@@ -594,7 +593,7 @@ if($auth) {
                         </a>
                     </li>
                   </ul>
-                </li>
+                </li>-->
                 <!-- Settings -->
                 <li<?php if($scriptname === "settings.php"){ ?> class="active"<?php } ?>>
                     <a href="settings.php">
@@ -602,7 +601,7 @@ if($auth) {
                     </a>
                 </li>
                 <!-- Local DNS Records -->
-                <li class="treeview <?php if(in_array($scriptname, array("dns_records.php", "cname_records.php"))){ ?>active<?php } ?>">
+                <!--<li class="treeview <?php if(in_array($scriptname, array("dns_records.php", "cname_records.php"))){ ?>active<?php } ?>">
                   <a href="#">
                     <i class="fa fa-fw fa-address-book"></i> <span>Local DNS</span>                    
                     <span class="pull-right-container">
@@ -623,15 +622,6 @@ if($auth) {
                   </ul>
                 </li>
                 <!-- Logout -->
-                <?php
-                // Show Logout button if $auth is set and authorization is required
-                if(strlen($pwhash) > 0) { ?>
-                <li>
-                    <a href="?logout">
-                        <i class="fa fa-fw fa-user-times"></i> <span>Logout</span>
-                    </a>
-                </li>
-                <?php } ?>
                 <?php } ?>
                 <!-- Login -->
                 <?php
@@ -643,18 +633,6 @@ if($auth) {
                     </a>
                 </li>
                 <?php } ?>
-                <!-- Donate -->
-                <li>
-                    <a href="https://pi-hole.net/donate/" rel="noopener" target="_blank">
-                        <i class="fab fa-fw fa-paypal"></i> <span>Donate</span>
-                    </a>
-                </li>
-                 <!-- Docs -->
-                 <li>
-                    <a href="https://docs.pi-hole.net/" rel="noopener" target="_blank">
-                        <i class="fa fa-fw fa-question-circle"></i> <span>Documentation</span>
-                    </a>
-                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
