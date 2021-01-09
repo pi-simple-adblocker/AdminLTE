@@ -6,6 +6,7 @@
 *    This file is copyright under the latest version of the EUPL.
 *    Please see LICENSE file for your rights under this license. */
     $indexpage = true;
+    $auth=true;
     require "scripts/pi-hole/php/header.php";
     require_once "scripts/pi-hole/php/gravity.php";
 
