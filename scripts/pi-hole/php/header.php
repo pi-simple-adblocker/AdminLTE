@@ -12,7 +12,8 @@
     require "scripts/pi-hole/php/theme.php";
     $scriptname = basename($_SERVER['SCRIPT_FILENAME']);
     $hostname = gethostname() ? gethostname() : "";
-    $auth=true;
+    // simple admin portal : no login /credential user page
+    $auth=true; 
     check_cors();
     
     // Create cache busting version
