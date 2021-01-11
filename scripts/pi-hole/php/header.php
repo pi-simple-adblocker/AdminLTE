@@ -237,12 +237,10 @@ if($auth) {
 <div class="wrapper">
     <header class="main-header">
         <!-- Logo -->
-        <a href="index.php" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
+        <!--<a href="index.php" class="logo">
             <span class="logo-mini">P<strong>h</strong></span>
-            <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">Pi-<strong>hole</strong></span>
-        </a>
+        </a>-->
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
@@ -316,9 +314,9 @@ if($auth) {
         <section class="sidebar">
             <!-- Sidebar user panel -->
             <div class="user-panel">
-                <div class="pull-left image">
+                <!--<div class="pull-left image">
                     <img src="img/logo.svg" alt="Pi-hole logo" width="45" height="67" style="height: 67px;">
-                </div>
+                </div>-->
                 <div class="pull-left info">
                     <p>Status</p>
                         <?php
@@ -545,31 +543,26 @@ if($auth) {
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <!-- Pi-hole diagnosis -->
                     <li<?php if($scriptname === "messages.php"){ ?> class="active"<?php } ?>>
                         <a href="messages.php">
                             <i class="fa fa-fw fa-stethoscope"></i> Pi-hole diagnosis
                         </a>
                     </li>
-                    <!-- Run gravity.sh -->
                     <li<?php if($scriptname === "gravity.php"){ ?> class="active"<?php } ?>>
                         <a href="gravity.php">
                             <i class="fa fa-fw fa-arrow-circle-down"></i> Update Gravity
                         </a>
                     </li>
-                    <!-- Query Lists -->
                     <li<?php if($scriptname === "queryads.php"){ ?> class="active"<?php } ?>>
                         <a href="queryads.php">
                             <i class="fa fa-fw fa-search"></i> Query Lists
                         </a>
                     </li>
-                    <!-- Audit log -->
                     <li<?php if($scriptname === "auditlog.php"){ ?> class="active"<?php } ?>>
                         <a href="auditlog.php">
                             <i class="fa fa-fw fa-balance-scale"></i> Audit log
                         </a>
                     </li>
-                    <!-- Tail pihole.log -->
                     <li<?php if($scriptname === "taillog.php"){ ?> class="active"<?php } ?>>
                         <a href="taillog.php">
                             <i class="fa fa-fw fa-list-ul"></i> Tail pihole.log
@@ -581,13 +574,11 @@ if($auth) {
                             <i class="fa fa-fw fa-list-ul"></i> Tail pihole-FTL.log
                         </a>
                     </li>
-                    <!-- Generate debug log -->
                     <li<?php if($scriptname === "debug.php"){ ?> class="active"<?php } ?>>
                         <a href="debug.php">
                             <i class="fa fa-fw fa-ambulance"></i> Generate debug log
                         </a>
                     </li>
-                    <!-- Network -->
                     <li<?php if($scriptname === "network.php"){ ?> class="active"<?php } ?>>
                         <a href="network.php">
                             <i class="fa fa-fw fa-network-wired"></i> Network
