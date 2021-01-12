@@ -5,7 +5,6 @@
 *
 *  This file is copyright under the latest version of the EUPL.
 *  Please see LICENSE file for your rights under this license. */
-
     require "scripts/pi-hole/php/auth.php";
     require "scripts/pi-hole/php/password.php";
     require_once "scripts/pi-hole/php/FTL.php";
@@ -183,7 +182,6 @@
     <meta name="msapplication-TileColor" content="#367fa9">
     <meta name="msapplication-TileImage" content="img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#367fa9">
-
 <?php if ($darkmode) { ?>
     <style>
         html { background-color: #000; }
@@ -237,10 +235,12 @@ if($auth) {
 <div class="wrapper">
     <header class="main-header">
         <!-- Logo -->
-        <!--<a href="index.php" class="logo">
+        <a href="index.php" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">P<strong>h</strong></span>
+            <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">Pi-<strong>hole</strong></span>
-        </a>-->
+        </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
@@ -314,9 +314,9 @@ if($auth) {
         <section class="sidebar">
             <!-- Sidebar user panel -->
             <div class="user-panel">
-                <!--<div class="pull-left image">
+                <div class="pull-left image">
                     <img src="img/logo.svg" alt="Pi-hole logo" width="45" height="67" style="height: 67px;">
-                </div>-->
+                </div>
                 <div class="pull-left info">
                     <p>Status</p>
                         <?php
@@ -459,7 +459,7 @@ if($auth) {
                         <i class="fa fa-fw fa-ban"></i> <span>Blacklist</span>
                     </a>
                 </li>
-                <!-- Group Management -->
+                <!-- Group Management 
                 <li class="treeview<?php if (in_array($scriptname, array("groups.php", "groups-adlists.php", "groups-clients.php", "groups-domains.php"))){ ?> active<?php } ?>">
                   <a href="#">
                     <i class="fa fa-fw fa-users-cog"></i> <span>Group Management</span>
@@ -489,7 +489,7 @@ if($auth) {
                         </a>
                     </li>
                   </ul>
-                </li>
+                </li>-->
                 <!-- Toggle -->
                 <!--<li id="pihole-disable" class="treeview"<?php if ($pistatus == "0") { ?> hidden<?php } ?>>
                   <a href="#">
@@ -535,7 +535,7 @@ if($auth) {
                     </a>
                 </li>-->
                 <!-- Tools -->
-                <!--<li class="treeview<?php if (in_array($scriptname, array("messages.php", "gravity.php", "queryads.php", "auditlog.php", "taillog.php", "taillog-FTL.php", "debug.php", "network.php"))){ ?> active<?php } ?>">
+                <li class="treeview<?php if (in_array($scriptname, array("groups-adlists.php", "gravity.php", "queryads.php", "auditlog.php", "taillog.php", "taillog-FTL.php", "debug.php", "network.php"))){ ?> active<?php } ?>">
                   <a href="#">
                     <i class="fa fa-fw fa-folder"></i> <span>Tools</span>
                     <span class="pull-right-container">
@@ -543,47 +543,54 @@ if($auth) {
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li<?php if($scriptname === "messages.php"){ ?> class="active"<?php } ?>>
-                        <a href="messages.php">
-                            <i class="fa fa-fw fa-stethoscope"></i> Pi-hole diagnosis
+                    <!-- Pi-hole diagnosis -->
+                    <li<?php if($scriptname === "groups-adlists.php"){ ?> class="active"<?php } ?>>
+                        <a href="groups-adlists.php">
+                            <i class="fa fa-fw fa-shield-alt"></i> Adlists
                         </a>
                     </li>
+                    <!-- Run gravity.sh -->
                     <li<?php if($scriptname === "gravity.php"){ ?> class="active"<?php } ?>>
                         <a href="gravity.php">
                             <i class="fa fa-fw fa-arrow-circle-down"></i> Update Gravity
                         </a>
                     </li>
-                    <li<?php if($scriptname === "queryads.php"){ ?> class="active"<?php } ?>>
+                    <!-- Query Lists -->
+                    <!--<li<?php if($scriptname === "queryads.php"){ ?> class="active"<?php } ?>>
                         <a href="queryads.php">
                             <i class="fa fa-fw fa-search"></i> Query Lists
                         </a>
                     </li>
+                    <!-- Audit log 
                     <li<?php if($scriptname === "auditlog.php"){ ?> class="active"<?php } ?>>
                         <a href="auditlog.php">
                             <i class="fa fa-fw fa-balance-scale"></i> Audit log
                         </a>
-                    </li>
+                    </li>-->
+                    <!-- Tail pihole.log 
                     <li<?php if($scriptname === "taillog.php"){ ?> class="active"<?php } ?>>
                         <a href="taillog.php">
                             <i class="fa fa-fw fa-list-ul"></i> Tail pihole.log
                         </a>
-                    </li>
-                    <!-- Tail pihole-FTL.log -->
+                    </li>-->
+                    <!-- Tail pihole-FTL.log 
                     <li<?php if($scriptname === "taillog-FTL.php"){ ?> class="active"<?php } ?>>
                         <a href="taillog-FTL.php">
                             <i class="fa fa-fw fa-list-ul"></i> Tail pihole-FTL.log
                         </a>
-                    </li>
+                    </li>-->
+                    <!-- Generate debug log 
                     <li<?php if($scriptname === "debug.php"){ ?> class="active"<?php } ?>>
                         <a href="debug.php">
                             <i class="fa fa-fw fa-ambulance"></i> Generate debug log
                         </a>
-                    </li>
+                    </li>-->
+                    <!-- Network 
                     <li<?php if($scriptname === "network.php"){ ?> class="active"<?php } ?>>
                         <a href="network.php">
                             <i class="fa fa-fw fa-network-wired"></i> Network
                         </a>
-                    </li>
+                    </li>-->
                   </ul>
                 </li>-->
                 <!-- Settings -->
